@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:timetable/Screen/dashboard.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -49,6 +50,8 @@ class _LoginPageState extends State<LoginPage> {
       if (response.body.toString() == 'Success') {
         print('Success');
         EasyLoading.dismiss();
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => DashboardPage()));
         _username.clear();
         _passkey.clear();
       } else if (response.body.toString() == 'Error') {
@@ -84,39 +87,98 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Time Table Generator',textAlign: TextAlign.start, style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold, fontFamily: 'JosefinSans'),),
-                        SizedBox(height: 35,),
+                        Text(
+                          'Time Table Generator',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'JosefinSans'),
+                        ),
+                        SizedBox(
+                          height: 35,
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(left: 35.0),
                           child: Row(
                             children: [
-                            Icon(Icons.event, color:Colors.grey[300] ,),
-                            Text('Automatic Time Table Generator', style: TextStyle(color: Colors.grey[300], fontWeight: FontWeight.w600, fontFamily: 'JosefinSans'),)
-                          ],),
+                              Icon(
+                                Icons.event,
+                                color: Colors.grey[300],
+                              ),
+                              Text(
+                                'Automatic Time Table Generator',
+                                style: TextStyle(
+                                    color: Colors.grey[300],
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'JosefinSans'),
+                              )
+                            ],
+                          ),
                         ),
-                        SizedBox(height: 25,),
+                        SizedBox(
+                          height: 25,
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(left: 35.0),
-                          child: Row(children: [
-                            Icon(Icons.phone_android, color:Colors.grey[300] ,),
-                            Text('Mobile App for Faculties', style: TextStyle(color: Colors.grey[300], fontWeight: FontWeight.w600, fontFamily: 'JosefinSans'),)
-                          ],),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.phone_android,
+                                color: Colors.grey[300],
+                              ),
+                              Text(
+                                'Mobile App for Faculties',
+                                style: TextStyle(
+                                    color: Colors.grey[300],
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'JosefinSans'),
+                              )
+                            ],
+                          ),
                         ),
-                        SizedBox(height: 25,),
+                        SizedBox(
+                          height: 25,
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(left: 35.0),
-                          child: Row(children: [
-                            Icon(Icons.speed, color:Colors.grey[300] ,),
-                            Text('Optimized performance', style: TextStyle(color: Colors.grey[300], fontWeight: FontWeight.w600, fontFamily: 'JosefinSans'),)
-                          ],),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.speed,
+                                color: Colors.grey[300],
+                              ),
+                              Text(
+                                'Optimized performance',
+                                style: TextStyle(
+                                    color: Colors.grey[300],
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'JosefinSans'),
+                              )
+                            ],
+                          ),
                         ),
-                        SizedBox(height: 25,),
+                        SizedBox(
+                          height: 25,
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(left: 35.0),
-                          child: Row(children: [
-                            Icon(Icons.security, color:Colors.grey[300] ,),
-                            Text('Secured System', style: TextStyle(color: Colors.grey[300], fontWeight: FontWeight.w600, fontFamily: 'JosefinSans'),)
-                          ],),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.security,
+                                color: Colors.grey[300],
+                              ),
+                              Text(
+                                'Secured System',
+                                style: TextStyle(
+                                    color: Colors.grey[300],
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'JosefinSans'),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),
